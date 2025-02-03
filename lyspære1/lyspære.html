@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyspære</title>
+    
+    <style>
+    #lightbulb {
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .on {
+        background-color: #FFD700
+
+    }
+    
+    .off {
+        background-color: gray;
+    }
+
+</style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div id="lightbulb" class="off"></div>
+        <p id="light-status">Lyset er av</p>
+    </div>
+
+    <button onclick="toggleLight()">Lysbryter</button>
+
+    <script>
+    function toggleLight() {
+        let lightbulb = document.getElementById('lightbulb');
+        let text = document.getElementById('light-status');
+    
+       
+        if (lightbulb.style.backgroundColor === 'gray' || lightbulb.style.backgroundColor === '') {
+            lightbulb.style.backgroundColor = '#FFD700';
+            lightbulb.classList.add('on');
+            text.innerHTML = "Lyset er på!";
+        } else {
+            lightbulb.style.backgroundColor = 'gray';
+            text.innerHTML = "Lyset er av.";
+        }
+    }
+    </script>
+</body>
+</html>
