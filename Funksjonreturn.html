@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funksjonreturn</title>
+</head>
+<body>
+    
+    <div id="mainDiv"> </div>
+    <button onclick="createAndShowHtml('green', 'Hello', 30, 'dotted', 5)">Test 1</button>
+    <button onclick="createAndShowHtml('gray', 'How', 20, 'solid', 1)">Test 2</button>
+    <button onclick="createAndShowHtml('yellow', 'Are You', 10, 'dashed', 10)">Test 3</button>
+
+    <script>
+        function createAndShowHtml(color, text, fontSize, borderStyle, borderSize, textColor){
+            document.getElementById('mainDiv').innerHTML = `
+            <div ${createStyle(color, fontSize, borderStyle, borderSize)}>${text}</div>
+            `;
+        }
+
+        function createStyle(color, fontSize, borderStyle, borderSize, textColor){
+            return `style="${createBackGroundColor(color)} ${createFontSize(fontSize)} ${createBorderStyle(borderStyle, borderSize)}"`;
+        }
+
+        function createBackGroundColor(color){
+            return `background-color: ${color};`;
+        }
+
+        function createFontSize(fontSize){
+            return `font-size: ${fontSize}px;`;
+        }
+
+        function createBorderStyle(borderStyle, borderSize){
+            return `border: ${borderSize}px ${borderStyle} black;`;
+        }
+
+        function createtextColor(textColor){
+            return `color: ${textColor};`;
+        }
+    </script>
+</body>
+</html>
