@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big First Letter</title>
+</head>
+<body>
+    <h1> Big First Letter</h1>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="biggerBigboiletter()">bigboiletter</button>
+    <div id="result"></div>
+
+    <script>
+        function bigboiletter(str) { // str = streng (sekvens av tegn)
+            if (str.length === 0) {
+                return str;
+            }
+
+            const firstChar = str.charAt(0); //const = konstant / variabel som ikke kan endres
+
+            if (/[a-zA-Z]/.test(firstChar)) {  //om første tegn er liten bokstav blir den om til stor bokstav
+                return firstChar.toUpperCase() + str.slice(1);
+            }
+
+            return str;
+        }
+
+        function biggerBigboiletter() {
+            const inputString = document.getElementById('inputString').value;
+            const result = bigboiletter(inputString);
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
