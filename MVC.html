@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC</title>
+</head>
+<body>
+    <div class="group">
+        <div>Hei jeg heter</div>
+        <div id="nameDiv">..her kommer et navn</div>
+    </div>
+
+    <div class="group">
+        <div> jeg bor i</div>
+        <div id="cityDiv">..her kommer et sted</div>
+    </div>
+
+    <div class="group">
+        <div> min favoritt mat er</div>
+        <div id="foodDiv">..her kommer en matrett</div>
+    </div>
+<button onclick="setFields()">sett verdier</button>
+<input type="text" onchange="setName(this.value)">
+<input type="text" onchange="setCity(this.value)">
+<input type="text" onchange="setFood(this.value)">
+
+<script> //Model
+    let name = "Marius";
+    let city = "Kongsberg";
+    let food = "Taco";
+
+        //View
+    function setFields(){
+        document.getElementById('nameDiv').innerHTML = name;
+        document.getElementById('cityDiv').innerHTML = city;
+        document.getElementById('foodDiv').innerHTML = food;
+    }
+        //Controller - sryter endring av model
+    function setName(nameInput){
+        name = nameInput;
+        setFields();
+    }
+
+    function setCity(cityInput){
+        city = cityInput;
+        setFields();
+    }
+
+    function setFood(foodInput){
+        food = foodInput;
+        setFields();
+    }
+</script>
+</body>
+</html>
