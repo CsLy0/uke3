@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC</title>
+</head>
+<body>  
+<div id="app"></div>
+
+<script> //Model
+    let name = "..her kommer et navn";
+    let city = "..her kommer et sted";
+    let food = "..her kommer en matrett";
+
+        //View
+        updateView();
+    function updateView(){
+        let html = `
+        <div class="group">
+        <div>Hei jeg heter</div>
+        <div id="nameDiv">${name}</div>
+    </div>
+    <div class="group">
+        <div> jeg bor i</div>
+        <div id="cityDiv">${city}</div>
+    </div>
+    <div class="group">
+        <div> min favoritt mat er</div>
+        <div id="foodDiv">${food}</div>
+    </div>
+    <button onclick="setFields()">sett verdier</button>
+    <input type="text" onchange="setName(this.value)">
+    <input type="text" onchange="setCity(this.value)">
+    <input type="text" onchange="setFood(this.value)">`
+
+    document.getElementById('app').innerHTML = html;
+    }
+
+    //Controller - sryter endring av model
+    function setName(nameInput){
+        name = nameInput;
+        updateView();
+    }
+
+    function setCity(cityInput){
+        city = cityInput;
+        updateView();
+    }
+
+    function setFood(foodInput){
+        food = foodInput;
+        updateView();
+    }
+</script>
+</body>
+</html>
+        
